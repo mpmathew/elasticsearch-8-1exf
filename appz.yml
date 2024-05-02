@@ -37,4 +37,4 @@ properties:
     node.name: node-master
     xpack.security.enabled: true
     bootstrap.memory_lock: true
-    revision : 86
+    revision : 87
