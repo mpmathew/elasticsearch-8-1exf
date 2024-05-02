@@ -1,0 +1,40 @@
+app:
+    name: Elasticsearch
+    code: ELASTICSEARCH
+    notify: mpmathew@ecloudcontrol.com
+    
+build:
+    version: 8.13
+    env: DEV
+    build_file: none
+    output_files: output/*.zip
+    image_template: elasticsearch-8.13exf
+    
+deploy:
+    context: exf/DEV
+    type: statefulset
+    ingress: none
+    replicas: 1
+    port:
+    - 9200
+    - 9300
+    
+volumes:
+  - claim: elastic-data
+    mount: /usr/share/elasticsearch/data
+    name: data
+    size: 5Gi
+    mode: ReadWriteOnce   
+    
+properties:
+    ELASTICSEARCH_PASSWORD: 
+      vault: ELASTIC_PASSWORD
+    ELASTICSEARCH_HOST_PORT: 9200
+    ELASTICSEARCH_USERNAME: kibana_user
+    ELASTICSEARCH_USER_ROLE: cluster_admin
+    discovery.type: single-node
+    cluster.name: docker-cluster
+    node.name: node-master
+    xpack.security.enabled: true
+    bootstrap.memory_lock: true
+    revision : 86
