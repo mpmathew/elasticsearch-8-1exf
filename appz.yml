@@ -35,6 +35,6 @@ properties:
     discovery.type: single-node
     cluster.name: docker-cluster
     node.name: node-master
-    xpack.security.enabled: true
+    xpack.security.enabled: false
     bootstrap.memory_lock: true
-    revision : 90
+    revision : 91
