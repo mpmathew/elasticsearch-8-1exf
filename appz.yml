@@ -31,7 +31,7 @@ properties:
       vault: ELASTIC_PASSWORD
     ELASTICSEARCH_HOST_PORT: 9200
     ELASTICSEARCH_USERNAME: kibana_user
-    ELASTICSEARCH_USER_ROLE: cluster_admin
+    ELASTICSEARCH_USER_ROLE: kibana_admin
     cluster.name: docker-cluster
     node.name: node-master
-    revision : 96
+    revision : 97
