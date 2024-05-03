@@ -32,9 +32,6 @@ properties:
     ELASTICSEARCH_HOST_PORT: 9200
     ELASTICSEARCH_USERNAME: kibana_user
     ELASTICSEARCH_USER_ROLE: cluster_admin
-    discovery.type: single-node
     cluster.name: docker-cluster
     node.name: node-master
-    xpack.security.enabled: false
-    bootstrap.memory_lock: true
-    revision : 95
+    revision : 96
